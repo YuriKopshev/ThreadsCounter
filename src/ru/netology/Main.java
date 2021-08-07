@@ -28,15 +28,16 @@ public class Main {
             e.printStackTrace();
         }
 
+
         //демонстрация запуска одной задачи
         try {
             String result = exec.invokeAny(callableTasks);
             System.out.println(result);
+            exec.shutdown();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
-        exec.shutdown();
     }
 }
 
